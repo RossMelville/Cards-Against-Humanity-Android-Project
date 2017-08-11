@@ -13,6 +13,6 @@ public class CardTest {
     @Test
     public void canReturnStatement() {
         Card card = new Card("Pulling out");
-        assertEquals("Pulling out", card.getStatement);
+        assertEquals("Pulling out", card.getStatement());
     }
 }

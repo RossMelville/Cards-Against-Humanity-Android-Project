@@ -12,4 +12,8 @@ public class Card {
         this.statement =  statement;
     }
 
+    public String getStatement() {
+        return this.statement;
+    }
+
 }
