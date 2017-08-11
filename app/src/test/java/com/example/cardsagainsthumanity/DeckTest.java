@@ -12,9 +12,17 @@ import static junit.framework.TestCase.assertEquals;
 public class DeckTest {
 
     @Test
-    public void canAddGetDeck() {
-        Deck deck = new Deck()
+    public void canGetDeck() {
+        Deck deck = new Deck();
         assertEquals(3, deck.getDeck().size());
+    }
+
+    @Test
+    public void canAddToDeck() {
+        Deck deck = new Deck();
+        Card card = new Card("Madonna");
+        deck.addCard(card);
+        assertEquals(4, deck.getDeck().size());
     }
 
     
