@@ -12,9 +12,6 @@ public class Deck {
 
     public Deck() {
         deck = new ArrayList<Card>();
-        deck.add(new Card("Homeless people"));
-        deck.add(new Card("During sex, I like to think about ________."));
-        deck.add(new Card("Battlefield amputations"));
     }
 
     public ArrayList<Card> getDeck() {

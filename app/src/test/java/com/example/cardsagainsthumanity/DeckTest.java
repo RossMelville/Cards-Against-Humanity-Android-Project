@@ -14,7 +14,7 @@ public class DeckTest {
     @Test
     public void canGetDeck() {
         Deck deck = new Deck();
-        assertEquals(3, deck.getDeck().size());
+        assertEquals(0, deck.getDeck().size());
     }
 
     @Test
@@ -22,8 +22,15 @@ public class DeckTest {
         Deck deck = new Deck();
         Card card = new Card("Madonna");
         deck.addCard(card);
-        assertEquals(4, deck.getDeck().size());
+        assertEquals(1, deck.getDeck().size());
     }
 
-    
+    @Test
+    public void canRemoveFromDeck() {
+        Deck deck = new Deck();
+        Card card = new Card("Donald Trump");
+        deck.addCard(card);
+        deck.removeCard(card);
+        assertEquals(0, deck.getDeck().size());
+    }
 }
