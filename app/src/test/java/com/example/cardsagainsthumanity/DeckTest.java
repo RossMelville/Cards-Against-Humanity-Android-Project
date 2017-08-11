@@ -3,6 +3,7 @@ package com.example.cardsagainsthumanity;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertNotNull;
 import static junit.framework.TestCase.assertEquals;
 
 /**
@@ -32,5 +33,15 @@ public class DeckTest {
         deck.addCard(card);
         deck.removeCard(card);
         assertEquals(0, deck.getDeck().size());
+    }
+
+    @Test
+    public void canGetRandomCard() {
+        Deck deck = new Deck();
+        Card card = new Card("Donald Trump");
+        Card card1 = new Card("Madonna");
+        Card result = deck.getRandomCard();
+        assertEquals(1, deck.getDeck().size());
+        assertNotNull(result);
     }
 }
