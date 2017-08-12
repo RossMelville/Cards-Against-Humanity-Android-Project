@@ -40,4 +40,16 @@ public class GameTest {
         game.removeBlackStatementCards(card);
         assertEquals(1, game.getBlackStatementCards().size());
     }
+
+    @Test
+    public void canAddWhiteAnswerCard() {
+        Game game = new Game(2);
+        Card card = new Card("Donald Trump");
+
+        game.addWhiteAnswerCard(card);
+        assertEquals(1, game.getWhiteAnswerCards().size());
+    }
+    
+
 }
+
