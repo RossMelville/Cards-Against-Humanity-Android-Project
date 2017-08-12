@@ -16,13 +16,13 @@ public class Game {
     private int[] points;
 
     public Game(int numberOfPlayers) {
-        players = new ArrayList<Player>();
-        blackDeck = new Deck();
-        whiteDeck = new Deck();
-        blackStatementCards = new ArrayList<Card>();
-        whiteAnswerCards = new ArrayList<Card>();
-        dealer = 0;
-        points = new int[numberOfPlayers];
+        this.players = new ArrayList<Player>();
+        this.blackDeck = new Deck();
+        this.whiteDeck = new Deck();
+        this.blackStatementCards = new ArrayList<Card>();
+        this.whiteAnswerCards = new ArrayList<Card>();
+        this.dealer = 0;
+        this.points = new int[numberOfPlayers];
     }
 
 

@@ -62,6 +62,12 @@ public class GameTest {
         assertEquals(1, game.getWhiteAnswerCards().size());
     }
 
+    @Test
+    public void canSetDealer() {
+        Game game = new Game(2);
+        game.setDealer(1);
+        assertEquals(1, game.getDealer());
+    }
 
 }
 
