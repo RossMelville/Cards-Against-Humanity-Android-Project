@@ -25,7 +25,7 @@ public class GameTest {
         Game game = new Game(2);
         Card card = new Card("During sex I thing about _________.");
 
-        game.addBlackCard(card);
+        game.addBlackStatementCard(card);
         assertEquals(1, game.getBlackStatementCards().size());
     }
 }

@@ -34,4 +34,11 @@ public class Game {
         return players;
     }
 
+    public void addBlackStatementCard(Card card) {
+        blackStatementCards.add(card);
+    }
+
+    public ArrayList<Card> getBlackStatementCards() {
+        return blackStatementCards;
+    }
 }
