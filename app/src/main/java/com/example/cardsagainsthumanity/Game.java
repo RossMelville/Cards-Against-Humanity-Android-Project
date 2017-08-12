@@ -39,4 +39,7 @@ public class Game {
     }
 
 
+    public void addToBlackDeck(Card card) {
+        blackDeck.deck.add(card);
+    }
 }
