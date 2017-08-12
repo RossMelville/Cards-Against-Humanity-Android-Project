@@ -11,11 +11,9 @@ import static junit.framework.TestCase.assertEquals;
 
 public class PlayerTest {
 
-    @Before
-    Player player1 = new Player("Ross");
-
     @Test
     public void canGetName(){
+        Player player1 = new Player("Ross");
         assertEquals("Ross", player1.getName());
     }
 }
