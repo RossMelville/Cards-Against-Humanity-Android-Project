@@ -46,6 +46,16 @@ public class PlayerTest {
         player1.populateHand(deck);
         assertEquals(10, player1.getHand().size());
         assertEquals(3, deck.getDeck().size());
+    }
 
+    @Test
+    public void canRemoveCard() {
+        Player player1 = new Player("Ross");
+        Card card1 = new Card("Growing a pair");
+        Card card2 = new Card("Famine");
+        player1.addCard(card1);
+        player1.addCard(card2);
+        player1.removeCard(card1);
+        assertEquals(1, player1.getHand().size());
     }
 }
