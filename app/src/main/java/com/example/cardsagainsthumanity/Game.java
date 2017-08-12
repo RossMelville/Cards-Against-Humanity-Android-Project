@@ -42,4 +42,13 @@ public class Game {
     public void addToBlackDeck(Card card) {
         blackDeck.deck.add(card);
     }
+
+    public Deck getWhiteDeck() {
+        return whiteDeck;
+    }
+
+
+    public void addToWhiteDeck(Card card) {
+        whiteDeck.deck.add(card);
+    }
 }

@@ -28,7 +28,7 @@ public class GameTest {
     }
 
     @Test
-    public void canRemoveCardFromBlackDeck() {
+    public void canAddCardToWhiteDeck() {
         Game game = new Game(1);
         Card card = new Card("Poor life choices.");
         game.addToWhiteDeck(card);
