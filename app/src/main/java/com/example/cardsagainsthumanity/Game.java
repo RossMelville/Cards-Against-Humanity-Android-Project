@@ -54,4 +54,8 @@ public class Game {
     public void addWhiteAnswerCard(Card card) {
         whiteAnswerCards.add(card);
     }
+
+    public void removeWhiteAnswerCard(Card card) {
+        whiteAnswerCards.remove(card);
+    }
 }
