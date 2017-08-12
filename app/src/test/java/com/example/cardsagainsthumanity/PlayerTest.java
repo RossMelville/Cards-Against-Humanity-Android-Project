@@ -23,7 +23,6 @@ public class PlayerTest {
         Card card = new Card("Poor life choices.");
         player1.addCard(card);
         assertEquals(1, player1.getHand().size());
-
     }
 
     @Test
