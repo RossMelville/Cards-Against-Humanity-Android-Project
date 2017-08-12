@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Game {
     private ArrayList<Player> players;
-    private Deck blackDeck;
-    private Deck whiteDeck;
+    public Deck blackDeck;
+    public Deck whiteDeck;
     private ArrayList<Card> blackStatementCards;
     private ArrayList<Card> whiteAnswerCards;
     private int dealer;
@@ -85,5 +85,13 @@ public class Game {
             if (players.get(i) == player) index = i;
         }
         return points[index];
+    }
+
+    public void populateBlackStatementCards() {
+        for(int i = 1; i < 3; i++){
+            Card card = blackDeck.getRandomCard();
+            blackDeck.removeCard(card);
+            blackStatementCards.add(card);
+        }
     }
 }

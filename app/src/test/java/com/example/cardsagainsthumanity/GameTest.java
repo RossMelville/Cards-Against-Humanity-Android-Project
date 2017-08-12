@@ -84,5 +84,23 @@ public class GameTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void canPopulateBlackStatementCards() {
+        Game game = new Game(2);
+        game.blackDeck.addCard(new Card("During sex, I like to think about________."));
+        game.blackDeck.addCard(new Card("World War 3 will be started because________."));
+        game.blackDeck.addCard(new Card("Growing a pair."));
+        game.blackDeck.addCard(new Card("Famine"));
+        game.blackDeck.addCard(new Card("Flesh-eating bacteria."));
+        game.blackDeck.addCard(new Card("Flying sex snakes."));
+        game.blackDeck.addCard(new Card("Not giving a shit about the Third World."));
+        game.blackDeck.addCard(new Card("A man on the brink of Orgasm"));
+        game.blackDeck.addCard(new Card("Shapeshifters."));
+
+        game.populateBlackStatementCards();
+        assertEquals(2, game.getBlackStatementCards().size());
+        assertEquals(7, game.blackDeck.size());
+    }
+
 }
 
