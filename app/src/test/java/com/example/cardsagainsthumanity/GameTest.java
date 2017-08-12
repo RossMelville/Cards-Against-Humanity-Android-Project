@@ -18,4 +18,12 @@ public class GameTest {
         game.addPlayer(player2);
         assertEquals(2, game.getPlayers().size());
     }
+
+    @Test
+    public void canAddCardToBlackDeck() {
+        Game game = new Game(1);
+        Card card = new Card("Poor life choices.");
+        game.addBlackDeck(card);
+        assertEquals(1, game.getBlackDeck().size());
+    }
 }
