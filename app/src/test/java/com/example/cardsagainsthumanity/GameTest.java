@@ -24,6 +24,14 @@ public class GameTest {
         Game game = new Game(1);
         Card card = new Card("Poor life choices.");
         game.addToBlackDeck(card);
-        assertEquals(1, game.getBlackDeck().size());
+        assertEquals(1, game.getBlackDeck().deck.size());
+    }
+
+    @Test
+    public void canRemoveCardFromBlackDeck() {
+        Game game = new Game(1);
+        Card card = new Card("Poor life choices.");
+        game.addToWhiteDeck(card);
+        assertEquals(1, game.getWhiteDeck().deck.size());
     }
 }
