@@ -41,4 +41,8 @@ public class Game {
     public ArrayList<Card> getBlackStatementCards() {
         return blackStatementCards;
     }
+
+    public void removeBlackStatementCards(Card card) {
+        blackStatementCards.remove(card);
+    }
 }

@@ -30,14 +30,14 @@ public class GameTest {
     }
 
     @Test
-    public void canClearBlackStatementCards() {
+    public void canRemoveBlackStatementCards() {
         Game game = new Game(2);
         Card card = new Card("During sex I think about _________.");
         Card card2 = new Card("I drink to forget __________.");
         game.addBlackStatementCard(card);
         game.addBlackStatementCard(card2);
 
-        game.clearBlackStatementCards();
-        assertEquals(0, game.getBlackStatementCards().size());
+        game.removeBlackStatementCards(card);
+        assertEquals(1, game.getBlackStatementCards().size());
     }
 }
