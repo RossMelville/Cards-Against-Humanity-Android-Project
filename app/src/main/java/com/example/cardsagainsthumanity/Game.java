@@ -66,4 +66,8 @@ public class Game {
     public void setDealer(int dealer) {
         this.dealer = dealer;
     }
+
+    public int[] getPoints() {
+        return points;
+    }
 }

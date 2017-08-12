@@ -70,10 +70,18 @@ public class GameTest {
     }
 
     @Test
-    public void checkPointsArraySetCorrectly() {
-        Game game = new Game(5);
+    public void canAllocatePointToCorrectPlayer() {
+        Game game = new Game(3);
+        Player player1 = new Player("Ross");
+        Player player2 = new Player("Victoria");
+        Player player3 = new Player("Steve");
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.addPlayer(player3);
 
-        assertEquals(5, game.getPoints().size());
+        game.addPoint(player2);
+        int result = game.getPlayerPoints(player2);
+        assertEquals(1, result);
     }
 
 }
