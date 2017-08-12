@@ -50,6 +50,18 @@ public class GameTest {
         assertEquals(1, game.getWhiteAnswerCards().size());
     }
 
+    @Test
+    public void canRemoveWhiteAnswerCard() {
+        Game game = new Game(2);
+        Card card1 = new Card("Donald Trump");
+        Card card2 = new Card("Ross Melville");
+        game.addWhiteAnswerCard(card1);
+        game.addWhiteAnswerCard(card2);
+
+        game.removeWhiteAnswerCard(card1);
+        assertEquals(1, game.getWhiteAnswerCards().size());
+    }
+
 
 }
 
