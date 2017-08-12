@@ -49,7 +49,7 @@ public class GameTest {
         game.addWhiteAnswerCard(card);
         assertEquals(1, game.getWhiteAnswerCards().size());
     }
-    
+
 
 }
 

@@ -45,4 +45,13 @@ public class Game {
     public void removeBlackStatementCards(Card card) {
         blackStatementCards.remove(card);
     }
+
+    public ArrayList<Card> getWhiteAnswerCards() {
+        return whiteAnswerCards;
+    }
+
+
+    public void addWhiteAnswerCard(Card card) {
+        whiteAnswerCards.add(card);
+    }
 }
