@@ -20,5 +20,12 @@ public class GameTest {
         assertEquals(2, game.getPlayers().size());
     }
 
-    
+    @Test
+    public void canAddCardToBlackStatementCards() {
+        Game game = new Game(2);
+        Card card = new Card("During sex I thing about _________.");
+
+        game.addBlackCard(card);
+        assertEquals(1, game.getBlackStatementCards().size());
+    }
 }

@@ -10,8 +10,8 @@ public class Game {
     private ArrayList<Player> players;
     private Deck blackDeck;
     private Deck whiteDeck;
-    private ArrayList<Card> statementCards;
-    private ArrayList<Card> answerCards;
+    private ArrayList<Card> blackStatementCards;
+    private ArrayList<Card> whiteAnswerCards;
     private int dealer;
     private int[] points;
 
@@ -19,8 +19,8 @@ public class Game {
         players = new ArrayList<Player>();
         blackDeck = new Deck();
         whiteDeck = new Deck();
-        statementCards = new ArrayList<Card>();
-        answerCards = new ArrayList<Card>();
+        blackStatementCards = new ArrayList<Card>();
+        whiteAnswerCards = new ArrayList<Card>();
         dealer = 0;
         points = new int[numberOfPlayers];
     }
