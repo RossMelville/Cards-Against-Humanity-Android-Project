@@ -23,5 +23,18 @@ public class Player {
         return hand;
     }
 
+    public void addCard(Card card) {
+        hand.add(card);
+    }
+
+
+    public void populateHand(Deck deck) {
+        for(int i = 1; i < 11; i++){
+            Card card = deck.getRandomCard();
+            deck.removeCard(card);
+            hand.add(card);
+        }
+    }
+
 
 }

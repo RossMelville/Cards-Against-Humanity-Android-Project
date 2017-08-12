@@ -18,6 +18,15 @@ public class PlayerTest {
     }
 
     @Test
+    public void canAddCardToHand() {
+        Player player1 = new Player("Ross");
+        Card card = new Card("Poor life choices.");
+        player1.addCard(card);
+        assertEquals(1, player1.getHand().size());
+
+    }
+
+    @Test
     public void canPopulateHand() {
         Player player1 = new Player("Ross");
         Deck deck = new Deck();
@@ -36,6 +45,7 @@ public class PlayerTest {
         deck.addCard(new Card("Shapeshifters."));
         player1.populateHand(deck);
         assertEquals(10, player1.getHand().size());
+        assertEquals(3, deck.getDeck().size());
 
     }
 }
