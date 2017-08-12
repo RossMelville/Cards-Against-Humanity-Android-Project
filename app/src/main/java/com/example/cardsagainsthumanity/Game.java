@@ -26,7 +26,8 @@ public class Game {
     }
 
 
-    public void addPlayer(Player player1) {
+    public void addPlayer(Player player) {
+        players.add(player);
     }
 
     public ArrayList<Player> getPlayers() {
