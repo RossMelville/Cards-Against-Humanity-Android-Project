@@ -58,4 +58,12 @@ public class Game {
     public void removeWhiteAnswerCard(Card card) {
         whiteAnswerCards.remove(card);
     }
+
+    public int getDealer() {
+        return dealer;
+    }
+
+    public void setDealer(int dealer) {
+        this.dealer = dealer;
+    }
 }
