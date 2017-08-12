@@ -13,7 +13,7 @@ public class Game {
     private ArrayList<Card> statementCards;
     private ArrayList<Card> answerCards;
     private int dealer;
-    private int [] points;
+    private int[] points;
 
     public Game(int numberOfPlayers) {
         players = new ArrayList<Player>();
@@ -34,21 +34,4 @@ public class Game {
         return players;
     }
 
-    public Deck getBlackDeck() {
-        return blackDeck;
-    }
-
-
-    public void addToBlackDeck(Card card) {
-        blackDeck.deck.add(card);
-    }
-
-    public Deck getWhiteDeck() {
-        return whiteDeck;
-    }
-
-
-    public void addToWhiteDeck(Card card) {
-        whiteDeck.deck.add(card);
-    }
 }
