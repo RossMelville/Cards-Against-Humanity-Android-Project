@@ -70,4 +70,20 @@ public class Game {
     public int[] getPoints() {
         return points;
     }
+
+    public void addPoint(Player player) {
+        int index = 0;
+        for(int i = 0; i < players.size(); ++i) {
+            if(players.get(i) == player) index = i;
+        }
+        points[index] += 1;
+    }
+
+    public int getPlayerPoints(Player player) {
+        int index = 0;
+        for(int i = 0; i < players.size(); ++i) {
+            if (players.get(i) == player) index = i;
+        }
+        return points[index];
+    }
 }
