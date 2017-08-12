@@ -69,5 +69,12 @@ public class GameTest {
         assertEquals(1, game.getDealer());
     }
 
+    @Test
+    public void checkPointsArraySetCorrectly() {
+        Game game = new Game(5);
+
+        assertEquals(5, game.getPoints().size());
+    }
+
 }
 
