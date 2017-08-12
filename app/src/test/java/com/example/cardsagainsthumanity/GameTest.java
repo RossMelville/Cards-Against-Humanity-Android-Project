@@ -23,9 +23,21 @@ public class GameTest {
     @Test
     public void canAddCardToBlackStatementCards() {
         Game game = new Game(2);
-        Card card = new Card("During sex I thing about _________.");
+        Card card = new Card("During sex I think about _________.");
 
         game.addBlackStatementCard(card);
         assertEquals(1, game.getBlackStatementCards().size());
+    }
+
+    @Test
+    public void canClearBlackStatementCards() {
+        Game game = new Game(2);
+        Card card = new Card("During sex I think about _________.");
+        Card card2 = new Card("I drink to forget __________.");
+        game.addBlackStatementCard(card);
+        game.addBlackStatementCard(card2);
+
+        game.clearBlackStatementCards();
+        assertEquals(0, game.getBlackStatementCards().size());
     }
 }
