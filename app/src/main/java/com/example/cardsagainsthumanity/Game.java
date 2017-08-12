@@ -33,4 +33,10 @@ public class Game {
     public ArrayList<Player> getPlayers() {
         return players;
     }
+
+    public Deck getBlackDeck() {
+        return blackDeck;
+    }
+
+
 }

@@ -51,4 +51,16 @@ public class DeckTest {
         assertEquals(2, deck.getDeck().size());
         assertNotNull(result);
     }
+
+    @Test
+    public void testCanGetSizeOfDeck() {
+        Deck deck = new Deck();
+        Card card = new Card("Donald Trump");
+        Card card1 = new Card("Madonna");
+        Card card2 = new Card("Ross Melville");
+        deck.addCard(card);
+        deck.addCard(card1);
+        deck.addCard(card2);
+        assertEquals(3, deck.size());
+    }
 }

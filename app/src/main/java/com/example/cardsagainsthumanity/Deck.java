@@ -34,4 +34,8 @@ public class Deck {
         Card card = deck.get(index);
         return card;
     }
+
+    public int size() {
+        return deck.size();
+    }
 }

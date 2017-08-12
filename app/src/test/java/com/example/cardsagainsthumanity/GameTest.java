@@ -23,7 +23,7 @@ public class GameTest {
     public void canAddCardToBlackDeck() {
         Game game = new Game(1);
         Card card = new Card("Poor life choices.");
-        game.addBlackDeck(card);
+        game.addToBlackDeck(card);
         assertEquals(1, game.getBlackDeck().size());
     }
 }
