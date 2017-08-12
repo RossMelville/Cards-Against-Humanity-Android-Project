@@ -1,7 +1,7 @@
 package com.example.cardsagainsthumanity;
 
 import java.util.ArrayList;
-import java.util.Random;
+
 
 /**
  * Created by rossmelville on 11/08/2017.
@@ -10,11 +10,10 @@ import java.util.Random;
 public class Deck {
 
     private ArrayList<Card> deck;
-    private Random randomGenerator;
 
     public Deck() {
         deck = new ArrayList<Card>();
-        randomGenerator = new Random();
+
     }
 
     public ArrayList<Card> getDeck() {
