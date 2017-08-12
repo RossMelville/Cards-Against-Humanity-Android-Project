@@ -26,4 +26,10 @@ public class Game {
     }
 
 
+    public void addPlayer(Player player1) {
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 }
