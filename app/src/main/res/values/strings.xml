@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cards Against Humanity</string>
+    <string name="rules">Each player is allocated 10 answer cards.  The dealer is allocated and chooses a statement or question for the rest of the players to answer. Using their answer cards the players then take it in turns to answer the question with what they deem the funniest answer. The dealer then chooses the funniest answer and a point is allocated to the player and they become the dealer for the next round. Continue playing until you\'re fed up or run out of cards.</string>
 </resources>
