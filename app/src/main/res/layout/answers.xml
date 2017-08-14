@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/XYZ"
         android:layout_width="352dp"
         android:layout_height="479dp"
         tools:layout_editor_absoluteX="16dp"

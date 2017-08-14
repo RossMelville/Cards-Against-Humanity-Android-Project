@@ -105,23 +105,5 @@ public class GameTest {
         assertEquals(7, game.blackDeck.size());
     }
 
-    @Test
-    public void canGetPlayersHandByName() {
-        Game game = new Game(3);
-        Player player1 = new Player("Ross");
-        Card card1 = new Card("Donald Trump");
-        Card card2 = new Card("Ross Melville");
-        player1.addCard(card1);
-        player1.addCard(card2);
-        Player player2 = new Player("Victoria");
-        Player player3 = new Player("Steve");
-        game.addPlayer(player1);
-        game.addPlayer(player2);
-        game.addPlayer(player3);
-
-        ArrayList<Card> result = game.getPlayersHand("Ross");
-        assertEquals(2, result.size());
-    }
-
 }
 

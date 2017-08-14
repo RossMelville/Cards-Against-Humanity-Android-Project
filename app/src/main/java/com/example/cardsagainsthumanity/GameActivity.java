@@ -2,9 +2,15 @@ package com.example.cardsagainsthumanity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
+
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,9 +106,19 @@ public class GameActivity extends AppCompatActivity {
         player4.populateHand(game.whiteDeck);
         game.addPlayer(player4);
 
+        ListView listView = (ListView)findViewById(R.id.list);
+
+        ArrayList<Card> player1Answers = player1.getHand();
+
+        String[] values = new String[10];
+        for(int i = 0; i < player1Answers.size(); i++) {
+            values[i] = player1Answers.get(i).getStatement();
+        }
+
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        listView.setAdapter(adapter);
 
 
-        ListView listView = (ListView) game.getPlayers()
 
     }
 

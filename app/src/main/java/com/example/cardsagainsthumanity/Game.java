@@ -94,4 +94,5 @@ public class Game {
             blackStatementCards.add(card);
         }
     }
+
 }
