@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.util.Log;
+
 
 import java.util.ArrayList;
 
@@ -16,13 +18,14 @@ public class GameActivity extends AppCompatActivity {
 
     ListView listView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        Game game = new Game(4);
-
+        final Game game = new Game(4);
         game.blackDeck.addCard(new Card("What ended my last relationship?"));
         game.blackDeck.addCard(new Card("Instead of coal, Father Christmas now gives bad children ______."));
         game.blackDeck.addCard(new Card("What will always get you laid?"));
@@ -90,30 +93,33 @@ public class GameActivity extends AppCompatActivity {
         game.whiteDeck.addCard(new Card("Poverty."));
         game.whiteDeck.addCard(new Card("German dungeon porn."));
 
+
         Card card1 = game.blackDeck.getRandomCard();
         game.addBlackStatementCard(card1);
         game.blackDeck.removeCard(card1);
 
-        Player player1 = new Player("player 1");
+        final Player player1 = new Player("player 1");
         player1.populateHand(game.whiteDeck);
         game.addPlayer(player1);
 
-        Player player2 = new Player("player 2");
+        final Player player2 = new Player("player 2");
         player2.populateHand(game.whiteDeck);
         game.addPlayer(player2);
 
-        Player player3 = new Player("player 3");
+        final Player player3 = new Player("player 3");
         player3.populateHand(game.whiteDeck);
         game.addPlayer(player3);
 
-        Player player4 = new Player("player 4");
+        final Player player4 = new Player("player 4");
         player4.populateHand(game.whiteDeck);
         game.addPlayer(player4);
 
         TextView statement = (TextView)findViewById(R.id.statement);
         statement.setText(game.getBlackStatementCards().get(0).getStatement());
 
-        ListView listView = (ListView)findViewById(R.id.list);
+        
+
+        listView = (ListView)findViewById(R.id.list);
 
         ArrayList<Card> player1Answers = player1.getHand();
 
@@ -126,10 +132,18 @@ public class GameActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                int itemPosition = i;
+                String item = (String)listView.getItemAtPosition(i);
+                Card card = player1.findByStatement(item);
+                game.addWhiteAnswerCard(card);
+                player1.removeCard(card);
+                Card newCard = game.whiteDeck.getRandomCard();
+                player1.addCard(newCard);
+                game.whiteDeck.removeCard(newCard);
             }
         });
     }
