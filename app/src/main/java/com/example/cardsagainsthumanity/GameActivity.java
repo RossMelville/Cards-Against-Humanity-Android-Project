@@ -2,11 +2,15 @@ package com.example.cardsagainsthumanity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static com.example.cardsagainsthumanity.R.id.parent;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -106,6 +110,9 @@ public class GameActivity extends AppCompatActivity {
         player4.populateHand(game.whiteDeck);
         game.addPlayer(player4);
 
+        TextView statement = (TextView)findViewById(R.id.statement);
+        statement.setText(game.getBlackStatementCards().get(0).getStatement());
+
         ListView listView = (ListView)findViewById(R.id.list);
 
         ArrayList<Card> player1Answers = player1.getHand();
@@ -116,10 +123,15 @@ public class GameActivity extends AppCompatActivity {
         }
 
         ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
+
         listView.setAdapter(adapter);
 
-
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                
+            }
+        });
     }
 
 
