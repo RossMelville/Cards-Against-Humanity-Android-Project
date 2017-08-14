@@ -41,6 +41,12 @@ public class Player {
         hand.remove(card);
     }
 
-    public Card findByStatement(String famine) {
+    public Card findByStatement(String statement) {
+        for(int i = 0; i < 11; i++) {
+            if(hand.get(i).getStatement() == statement) {
+                return hand.get(i);
+            }
+        }
+        return null;
     }
 }
