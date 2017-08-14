@@ -40,4 +40,7 @@ public class Player {
     public void removeCard(Card card) {
         hand.remove(card);
     }
+
+    public Card findByStatement(String famine) {
+    }
 }
