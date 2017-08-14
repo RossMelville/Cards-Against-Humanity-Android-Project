@@ -2,6 +2,7 @@ package com.example.cardsagainsthumanity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -83,11 +84,6 @@ public class GameActivity extends AppCompatActivity {
         game.addBlackStatementCard(card1);
         game.blackDeck.removeCard(card1);
 
-        Card card2 = game.blackDeck.getRandomCard();
-        game.addBlackStatementCard(card2);
-        game.blackDeck.removeCard(card2);
-
-
         Player player1 = new Player("player 1");
         player1.populateHand(game.whiteDeck);
         game.addPlayer(player1);
@@ -105,6 +101,8 @@ public class GameActivity extends AppCompatActivity {
         game.addPlayer(player4);
 
 
+
+        ListView listView = (ListView) game.getPlayers()
 
     }
 
