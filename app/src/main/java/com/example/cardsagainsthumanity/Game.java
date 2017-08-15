@@ -17,8 +17,8 @@ public class Game implements Serializable{
     public ArrayList<Player> players;
     public Deck blackDeck;
     public Deck whiteDeck;
-    private ArrayList<Card> blackStatementCards;
-    private ArrayList<Card> whiteAnswerCards;
+    public ArrayList<Card> blackStatementCards;
+    public ArrayList<Card> whiteAnswerCards;
     private int dealer;
     private int[] points;
 

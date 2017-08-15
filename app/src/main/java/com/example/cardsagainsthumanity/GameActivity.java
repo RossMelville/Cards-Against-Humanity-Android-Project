@@ -57,6 +57,9 @@ public class GameActivity extends AppCompatActivity {
                 Card card = game.players.get(position).findByStatement(item);
                 game.addWhiteAnswerCard(card);
                 game.players.get(position).removeCard(card);
+                Card newCard = game.whiteDeck.getRandomCard();
+                game.players.get(position).addCard(newCard);
+                game.whiteDeck.removeCard(newCard);
                 int deal = position + 1;
                 game.setDealer(deal);
 
