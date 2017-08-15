@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rules" />
 
     <Button
-        android:id="@+id/start_game"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -65,7 +65,7 @@
         android:layout_marginTop="8dp"
         android:text="How many Players do you want?"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/start_game"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
@@ -83,7 +83,7 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/start_game"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -15,7 +15,12 @@ public class PlayerSetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_set);
 
-        game = new Game(4);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String number = extras.getString("playerNumber");
+        int playerNumber = Integer.parseInt(number);
+
+        game = new Game(playerNumber);
 
         game.blackDeck.addCard(new Card("What ended my last relationship?"));
         game.blackDeck.addCard(new Card("Instead of coal, Father Christmas now gives bad children ______."));
@@ -109,7 +114,6 @@ public class PlayerSetActivity extends AppCompatActivity {
     public void onButtonClicked(View button) {
         Intent intent = new Intent(this, GameActivity.class);
         intent.putExtra("game", game);
-        Log.d("game:", game.toString());
         startActivity(intent);
     }
 }
