@@ -63,7 +63,7 @@ public class GameActivity extends AppCompatActivity {
                 int deal = position + 1;
                 game.setDealer(deal);
 
-                if(game.getDealer() == 4) {
+                if(game.getDealer() == game.getPlayers().size()) {
                     Intent intent = new Intent (GameActivity.this, DealerActivity.class);
                     intent.putExtra("game", game);
                     startActivity(intent);

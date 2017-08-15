@@ -17,6 +17,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         game = new Game(4);
+
         game.blackDeck.addCard(new Card("What ended my last relationship?"));
         game.blackDeck.addCard(new Card("Instead of coal, Father Christmas now gives bad children ______."));
         game.blackDeck.addCard(new Card("What will always get you laid?"));
@@ -88,19 +89,19 @@ public class WelcomeActivity extends AppCompatActivity {
         game.addBlackStatementCard(card1);
         game.blackDeck.removeCard(card1);
 
-        final Player player1 = new Player("player 1");
+        Player player1 = new Player("player 1");
         player1.populateHand(game.whiteDeck);
         game.addPlayer(player1);
 
-        final Player player2 = new Player("player 2");
+        Player player2 = new Player("player 2");
         player2.populateHand(game.whiteDeck);
         game.addPlayer(player2);
 
-        final Player player3 = new Player("player 3");
+        Player player3 = new Player("player 3");
         player3.populateHand(game.whiteDeck);
         game.addPlayer(player3);
 
-        final Player player4 = new Player("player 4");
+        Player player4 = new Player("player 4");
         player4.populateHand(game.whiteDeck);
         game.addPlayer(player4);
 
