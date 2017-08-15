@@ -1,5 +1,6 @@
 package com.example.cardsagainsthumanity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  * Created by rossmelville on 11/08/2017.
  */
 
-public class Deck {
+public class Deck implements Serializable{
 
     public ArrayList<Card> deck;
 

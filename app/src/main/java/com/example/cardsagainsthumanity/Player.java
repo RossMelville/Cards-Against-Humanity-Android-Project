@@ -1,12 +1,13 @@
 package com.example.cardsagainsthumanity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by rossmelville on 12/08/2017.
  */
 
-public class Player {
+public class Player implements Serializable{
     private String name;
     public ArrayList<Card> hand;
 

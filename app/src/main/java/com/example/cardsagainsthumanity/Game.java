@@ -1,13 +1,20 @@
 package com.example.cardsagainsthumanity;
 
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by rossmelville on 12/08/2017.
  */
 
-public class Game {
-    private ArrayList<Player> players;
+public class Game implements Serializable{
+
+    public ArrayList<Player> players;
     public Deck blackDeck;
     public Deck whiteDeck;
     private ArrayList<Card> blackStatementCards;
@@ -94,5 +101,8 @@ public class Game {
             blackStatementCards.add(card);
         }
     }
+
+
+
 
 }
