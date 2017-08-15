@@ -8,13 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.util.Log;
 
 
 import java.util.ArrayList;
-
-import static com.example.cardsagainsthumanity.R.id.end;
-import static com.example.cardsagainsthumanity.R.id.parent;
 
 public class GameActivity extends AppCompatActivity {
 
