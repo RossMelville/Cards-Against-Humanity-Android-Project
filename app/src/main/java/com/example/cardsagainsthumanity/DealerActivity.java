@@ -42,6 +42,7 @@ public class DealerActivity extends AppCompatActivity {
                 int itemPosition = i;
                 String item = (String) listView.getItemAtPosition(i);
 
+
             }
 
         });

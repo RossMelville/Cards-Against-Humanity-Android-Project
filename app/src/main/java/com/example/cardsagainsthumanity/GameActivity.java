@@ -56,6 +56,7 @@ public class GameActivity extends AppCompatActivity {
                 String item = (String) listView.getItemAtPosition(i);
                 Card card = game.players.get(position).findByStatement(item);
                 game.addWhiteAnswerCard(card);
+                game.players.get(position).removeCard(card);
                 int deal = position + 1;
                 game.setDealer(deal);
 
