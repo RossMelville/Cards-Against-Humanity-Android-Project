@@ -105,5 +105,12 @@ public class GameTest {
         assertEquals(7, game.blackDeck.size());
     }
 
+    @Test
+    public void canSetDealerIndex() {
+        Game game = new Game(2);
+        game.setDealerIndex(1);
+        assertEquals(1, game.dealerIndex);
+    }
+
 }
 
