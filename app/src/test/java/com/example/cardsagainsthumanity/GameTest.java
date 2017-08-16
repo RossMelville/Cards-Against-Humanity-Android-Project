@@ -101,8 +101,8 @@ public class GameTest {
         game.blackDeck.addCard(new Card("Shapeshifters."));
 
         game.populateBlackStatementCards();
-        assertEquals(2, game.getBlackStatementCards().size());
-        assertEquals(7, game.blackDeck.size());
+        assertEquals(3, game.getBlackStatementCards().size());
+        assertEquals(6, game.blackDeck.size());
     }
 
     @Test

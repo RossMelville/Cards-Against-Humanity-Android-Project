@@ -44,7 +44,6 @@ public class DealerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int itemPosition = i;
-                String item = (String) listView.getItemAtPosition(i);
                 Player winningPlayer = game.getPlayers().get(itemPosition);
                 game.addPoint(winningPlayer);
                 game.blackStatementCards.clear();

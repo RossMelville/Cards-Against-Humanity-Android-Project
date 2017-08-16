@@ -101,7 +101,7 @@ public class Game implements Serializable{
     }
 
     public void populateBlackStatementCards() {
-        for(int i = 1; i < 3; i++){
+        for(int i = 1; i < 4; i++){
             Card card = blackDeck.getRandomCard();
             blackDeck.removeCard(card);
             blackStatementCards.add(card);
