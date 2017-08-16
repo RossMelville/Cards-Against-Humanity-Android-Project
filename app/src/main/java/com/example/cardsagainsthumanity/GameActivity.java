@@ -24,11 +24,6 @@ public class GameActivity extends AppCompatActivity {
 
         game = (Game) getIntent().getSerializableExtra("game");
 
-
-        Card card1 = game.blackDeck.getRandomCard();
-        game.addBlackStatementCard(card1);
-        game.blackDeck.removeCard(card1);
-
         TextView statement = (TextView) findViewById(R.id.statement);
         statement.setText(game.getBlackStatementCards().get(0).getStatement());
 
@@ -52,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                
+
                 String item = (String) listView.getItemAtPosition(i);
                 Card card = game.players.get(position).findByStatement(item);
                 game.addWhiteAnswerCard(card);
@@ -63,15 +58,19 @@ public class GameActivity extends AppCompatActivity {
                 int deal = position + 1;
                 game.setDealer(deal);
 
-                if(game.getDealer() == game.getPlayers().size()) {
-                    Intent intent = new Intent (GameActivity.this, DealerActivity.class);
-                    intent.putExtra("game", game);
-                    startActivity(intent);
-                }
-                else {
+                if(game.getDealer() < game.points.length) {
+
                     Intent intent = new Intent(GameActivity.this, GameActivity.class);
                     intent.putExtra("game", game);
                     startActivity(intent);
+
+                }
+                else {
+
+                    Intent intent = new Intent (GameActivity.this, DealerActivity.class);
+                    intent.putExtra("game", game);
+                    startActivity(intent);
+
                 }
 
 

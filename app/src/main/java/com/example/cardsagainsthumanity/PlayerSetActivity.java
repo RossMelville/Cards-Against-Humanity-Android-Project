@@ -99,7 +99,7 @@ public class PlayerSetActivity extends AppCompatActivity {
     }
 
     public void onButtonClicked(View button) {
-        if(game.playerTracker < game.points.length - 1) {
+
 
             Player player = new Player(enteredName.toString());
             player.populateHand(game.whiteDeck);
@@ -107,11 +107,18 @@ public class PlayerSetActivity extends AppCompatActivity {
             game.playerTracker += 1;
             Log.d("Button Clicked:", "Test");
 
+        if(game.playerTracker < game.points.length) {
+
             Intent intent = new Intent(PlayerSetActivity.this, PlayerSetActivity.class);
             intent.putExtra("game", game);
             startActivity(intent);
 
         } else {
+
+            game.playerTracker += 1;
+            Card card1 = game.blackDeck.getRandomCard();
+            game.addBlackStatementCard(card1);
+            game.blackDeck.removeCard(card1);
 
             Intent intent = new Intent(PlayerSetActivity.this, GameActivity.class);
             intent.putExtra("game", game);
