@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class PlayerSetActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class PlayerSetActivity extends AppCompatActivity {
     Button button;
     EditText enteredName;
     String name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,11 @@ public class PlayerSetActivity extends AppCompatActivity {
 
         enteredName = (EditText)findViewById(R.id.name_input);
         name = enteredName.getText().toString();
-        
+
+        TextView playerNumber = (TextView)findViewById(R.id.player_no);
+        String playerNo = Integer.toString(game.playerTracker + 1);
+        playerNumber.setText("Player " + playerNo);
+
         button = (Button)findViewById(R.id.submit);
     }
 
