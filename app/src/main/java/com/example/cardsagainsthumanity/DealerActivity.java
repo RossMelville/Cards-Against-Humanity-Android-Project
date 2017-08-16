@@ -29,7 +29,7 @@ public class DealerActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
 
-        String[] values = new String[game.getPlayers().size()];
+        String[] values = new String[game.getPlayers().size() - 1];
 
         for(int i = 0; i < game.getWhiteAnswerCards().size(); i++) {
             values[i] = game.getWhiteAnswerCards().get(i).getStatement();
@@ -43,18 +43,15 @@ public class DealerActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int itemPosition = i;
-                Player winningPlayer = game.getPlayers().get(itemPosition);
+                int playerPosition = i;
+                Player winningPlayer = game.getPlayers().get(playerPosition);
                 game.addPoint(winningPlayer);
                 game.blackStatementCards.clear();
                 game.whiteAnswerCards.clear();
                 game.setTurn(0);
+                game.setDealerIndex(playerPosition);
 
-                Card newCard = game.blackDeck.getRandomCard();
-                game.blackStatementCards.add(newCard);
-                game.blackDeck.removeCard(newCard);
-
-                Intent intent = new Intent(DealerActivity.this, GameActivity.class);
+                Intent intent = new Intent(DealerActivity.this, DealerChooseActivity.class);
                 intent.putExtra("game", game);
                 startActivity(intent);
 

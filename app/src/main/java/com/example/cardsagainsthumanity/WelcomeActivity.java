@@ -101,9 +101,6 @@ public class WelcomeActivity extends AppCompatActivity {
         game.whiteDeck.addCard(new Card("Poverty."));
         game.whiteDeck.addCard(new Card("German dungeon porn."));
 
-        Card card1 = game.blackDeck.getRandomCard();
-        game.addBlackStatementCard(card1);
-        game.blackDeck.removeCard(card1);
 
         Intent intent = new Intent(this, PlayerSetActivity.class);
         intent.putExtra("game", game);

@@ -54,13 +54,10 @@ public class PlayerSetActivity extends AppCompatActivity {
         } else {
 
             game.playerTracker += 1;
-            Card card1 = game.blackDeck.getRandomCard();
-            game.addBlackStatementCard(card1);
-            game.blackDeck.removeCard(card1);
 
-            Toast.makeText(this, "Pass to " + game.players.get(0).getName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Pass to " + game.players.get(game.dealerIndex).getName(), Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(PlayerSetActivity.this, GameActivity.class);
+            Intent intent = new Intent(PlayerSetActivity.this, DealerChooseActivity.class);
             intent.putExtra("game", game);
             startActivity(intent);
 

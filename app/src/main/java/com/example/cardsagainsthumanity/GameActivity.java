@@ -31,6 +31,10 @@ public class GameActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
 
+        if(game.getTurn() == game.getDealerIndex()) {
+            game.turn += 1;
+        };
+
         final int position = game.getTurn();
 
         ArrayList<Card> playerAnswers = game.players.get(position).getHand();
@@ -59,7 +63,22 @@ public class GameActivity extends AppCompatActivity {
                 int turn = position + 1;
                 game.setTurn(turn);
 
-                if (game.getTurn() < game.points.length) {
+                if (game.getTurn() < game.points.length && game.getTurn() == game.getDealerIndex()) {
+
+                    Toast.makeText(GameActivity.this, "Pass to " + game.players.get(position + 2).getName(), Toast.LENGTH_LONG).show();
+
+                    Handler toastHandler = new Handler();
+                    toastHandler.postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                            intent.putExtra("game", game);
+                            startActivity(intent);
+                        }
+                    }, 2000L);
+
+                } else if (game.getTurn() < game.points.length) {
 
                     Toast.makeText(GameActivity.this, "Pass to " + game.players.get(position + 1).getName(), Toast.LENGTH_LONG).show();
 
@@ -73,6 +92,7 @@ public class GameActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     }, 2000L);
+
 
                 } else {
 

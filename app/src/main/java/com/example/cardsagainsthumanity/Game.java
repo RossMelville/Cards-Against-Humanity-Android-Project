@@ -20,7 +20,7 @@ public class Game implements Serializable{
     public Deck whiteDeck;
     public ArrayList<Card> blackStatementCards;
     public ArrayList<Card> whiteAnswerCards;
-    private int turn;
+    public int turn;
     public int[] points;
     public int playerTracker;
     public int dealerIndex;
