@@ -23,6 +23,7 @@ public class Game implements Serializable{
     private int turn;
     public int[] points;
     public int playerTracker;
+    public int dealerIndex;
 
     public Game(int numberOfPlayers) {
         this.players = new ArrayList<Player>();
@@ -33,6 +34,7 @@ public class Game implements Serializable{
         this.turn = 0;
         this.points = new int[numberOfPlayers];
         this.playerTracker = 0;
+        this.dealerIndex = 0;
 
     }
 

@@ -72,7 +72,7 @@ public class GameActivity extends AppCompatActivity {
                             intent.putExtra("game", game);
                             startActivity(intent);
                         }
-                    }, 5000L);
+                    }, 2000L);
 
                 } else {
 
