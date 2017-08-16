@@ -1,14 +1,15 @@
 package com.example.cardsagainsthumanity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -58,22 +59,33 @@ public class GameActivity extends AppCompatActivity {
                 int deal = position + 1;
                 game.setDealer(deal);
 
-                if(game.getDealer() < game.points.length) {
+                if (game.getDealer() < game.points.length) {
 
-                    Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                    String nextPlayer = game.players.get(position + 1).getName();
+
+                    Toast.makeText(GameActivity.this, "Pass to " + nextPlayer, Toast.LENGTH_LONG).show();
+
+                    Handler toastHandler = new Handler();
+                    toastHandler.postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                            intent.putExtra("game", game);
+                            startActivity(intent);
+                        }
+                    }, 5000L);
+
+
+
+
+                } else {
+
+                    Intent intent = new Intent(GameActivity.this, DealerActivity.class);
                     intent.putExtra("game", game);
                     startActivity(intent);
 
                 }
-                else {
-
-                    Intent intent = new Intent (GameActivity.this, DealerActivity.class);
-                    intent.putExtra("game", game);
-                    startActivity(intent);
-
-                }
-
-
             }
         });
 

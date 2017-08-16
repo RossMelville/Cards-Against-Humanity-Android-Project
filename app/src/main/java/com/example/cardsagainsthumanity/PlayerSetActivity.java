@@ -25,7 +25,7 @@ public class PlayerSetActivity extends AppCompatActivity {
         game = (Game) getIntent().getSerializableExtra("game");
 
         enteredName = (EditText)findViewById(R.id.name_input);
-        name = enteredName.getText().toString();
+
 
         TextView playerNumber = (TextView)findViewById(R.id.player_no);
         String playerNo = Integer.toString(game.playerTracker + 1);
@@ -36,6 +36,7 @@ public class PlayerSetActivity extends AppCompatActivity {
 
     public void onButtonClicked(View button) {
 
+            name = enteredName.getText().toString();
 
             Player player = new Player(name);
             player.populateHand(game.whiteDeck);
