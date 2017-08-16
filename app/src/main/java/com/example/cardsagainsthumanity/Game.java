@@ -112,4 +112,8 @@ public class Game implements Serializable{
     public void setDealerIndex(int index) {
         this.dealerIndex = index;
     }
+
+    public int getDealerIndex() {
+        return dealerIndex;
+    }
 }
