@@ -51,6 +51,10 @@ public class DealerActivity extends AppCompatActivity {
                 game.whiteAnswerCards.clear();
                 game.setDealer(0);
 
+                Card newCard = game.blackDeck.getRandomCard();
+                game.blackStatementCards.add(newCard);
+                game.blackDeck.removeCard(newCard);
+
                 Intent intent = new Intent(DealerActivity.this, GameActivity.class);
                 intent.putExtra("game", game);
                 startActivity(intent);
