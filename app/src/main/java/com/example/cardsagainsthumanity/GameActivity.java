@@ -61,9 +61,7 @@ public class GameActivity extends AppCompatActivity {
 
                 if (game.getDealer() < game.points.length) {
 
-                    String nextPlayer = game.players.get(position + 1).getName();
-
-                    Toast.makeText(GameActivity.this, "Pass to " + nextPlayer, Toast.LENGTH_LONG).show();
+                    Toast.makeText(GameActivity.this, "Pass to " + game.players.get(position + 1).getName(), Toast.LENGTH_LONG).show();
 
                     Handler toastHandler = new Handler();
                     toastHandler.postDelayed(new Runnable() {
@@ -75,9 +73,6 @@ public class GameActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     }, 5000L);
-
-
-
 
                 } else {
 

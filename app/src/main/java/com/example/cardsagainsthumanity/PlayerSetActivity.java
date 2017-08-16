@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PlayerSetActivity extends AppCompatActivity {
 
@@ -56,6 +57,8 @@ public class PlayerSetActivity extends AppCompatActivity {
             Card card1 = game.blackDeck.getRandomCard();
             game.addBlackStatementCard(card1);
             game.blackDeck.removeCard(card1);
+
+            Toast.makeText(this, "Pass to " + game.players.get(0).getName(), Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(PlayerSetActivity.this, GameActivity.class);
             intent.putExtra("game", game);
