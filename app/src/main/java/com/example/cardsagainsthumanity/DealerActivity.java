@@ -49,7 +49,7 @@ public class DealerActivity extends AppCompatActivity {
                 game.addPoint(winningPlayer);
                 game.blackStatementCards.clear();
                 game.whiteAnswerCards.clear();
-                game.setDealer(0);
+                game.setTurn(0);
 
                 Card newCard = game.blackDeck.getRandomCard();
                 game.blackStatementCards.add(newCard);

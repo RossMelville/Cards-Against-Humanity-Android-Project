@@ -66,10 +66,10 @@ public class GameTest {
     }
 
     @Test
-    public void canSetDealer() {
+    public void canSetTurn() {
         Game game = new Game(2);
-        game.setDealer(1);
-        assertEquals(1, game.getDealer());
+        game.setTurn(1);
+        assertEquals(1, game.getTurn());
     }
 
     @Test

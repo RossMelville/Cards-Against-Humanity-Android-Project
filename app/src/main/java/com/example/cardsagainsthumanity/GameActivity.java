@@ -31,7 +31,7 @@ public class GameActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
 
-        final int position = game.getDealer();
+        final int position = game.getTurn();
 
         ArrayList<Card> playerAnswers = game.players.get(position).getHand();
 
@@ -56,10 +56,10 @@ public class GameActivity extends AppCompatActivity {
                 Card newCard = game.whiteDeck.getRandomCard();
                 game.players.get(position).addCard(newCard);
                 game.whiteDeck.removeCard(newCard);
-                int deal = position + 1;
-                game.setDealer(deal);
+                int turn = position + 1;
+                game.setTurn(turn);
 
-                if (game.getDealer() < game.points.length) {
+                if (game.getTurn() < game.points.length) {
 
                     Toast.makeText(GameActivity.this, "Pass to " + game.players.get(position + 1).getName(), Toast.LENGTH_LONG).show();
 
