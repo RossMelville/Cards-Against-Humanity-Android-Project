@@ -5,22 +5,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class PlayerSetActivity extends AppCompatActivity {
 
     Game game;
+    Button button;
+    EditText enteredName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_set);
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        String number = extras.getString("playerNumber");
-        int playerNumber = Integer.parseInt(number);
+        game = (Game) getIntent().getSerializableExtra("game");
 
-        game = new Game(playerNumber);
 
         game.blackDeck.addCard(new Card("What ended my last relationship?"));
         game.blackDeck.addCard(new Card("Instead of coal, Father Christmas now gives bad children ______."));
@@ -89,31 +89,36 @@ public class PlayerSetActivity extends AppCompatActivity {
         game.whiteDeck.addCard(new Card("Poverty."));
         game.whiteDeck.addCard(new Card("German dungeon porn."));
 
+
+        enteredName = (EditText)findViewById(R.id.name_input);
+        button = (Button)findViewById(R.id.submit);
+
         Card card1 = game.blackDeck.getRandomCard();
         game.addBlackStatementCard(card1);
         game.blackDeck.removeCard(card1);
-
-        Player player1 = new Player("player 1");
-        player1.populateHand(game.whiteDeck);
-        game.addPlayer(player1);
-
-        Player player2 = new Player("player 2");
-        player2.populateHand(game.whiteDeck);
-        game.addPlayer(player2);
-
-        Player player3 = new Player("player 3");
-        player3.populateHand(game.whiteDeck);
-        game.addPlayer(player3);
-
-        Player player4 = new Player("player 4");
-        player4.populateHand(game.whiteDeck);
-        game.addPlayer(player4);
-
     }
 
     public void onButtonClicked(View button) {
-        Intent intent = new Intent(this, GameActivity.class);
-        intent.putExtra("game", game);
-        startActivity(intent);
+        if(game.playerTracker < game.points.length - 1) {
+
+            Player player = new Player(enteredName.toString());
+            player.populateHand(game.whiteDeck);
+            game.addPlayer(player);
+            game.playerTracker += 1;
+            Log.d("Button Clicked:", "Test");
+
+            Intent intent = new Intent(PlayerSetActivity.this, PlayerSetActivity.class);
+            intent.putExtra("game", game);
+            startActivity(intent);
+
+        } else {
+
+            Intent intent = new Intent(PlayerSetActivity.this, GameActivity.class);
+            intent.putExtra("game", game);
+            startActivity(intent);
+
+        }
+
     }
+
 }

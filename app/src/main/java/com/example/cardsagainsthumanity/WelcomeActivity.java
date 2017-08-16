@@ -13,6 +13,7 @@ import static com.example.cardsagainsthumanity.R.id.player_text;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    Game game;
     Button button;
     EditText playerEditText;
 
@@ -28,9 +29,13 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void onButtonClicked(View button) {
 
-        String playerNumber = playerEditText.getText().toString();
+        String players = playerEditText.getText().toString();
+        int numberOfPlayers = Integer.parseInt(players);
+
+        game = new Game(numberOfPlayers);
+
         Intent intent = new Intent(this, PlayerSetActivity.class);
-        intent.putExtra("playerNumber", playerNumber);
+        intent.putExtra("game", game);
         startActivity(intent);
     }
 

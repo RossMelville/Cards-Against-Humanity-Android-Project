@@ -52,7 +52,7 @@ public class GameActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int itemPosition = i;
+                
                 String item = (String) listView.getItemAtPosition(i);
                 Card card = game.players.get(position).findByStatement(item);
                 game.addWhiteAnswerCard(card);
