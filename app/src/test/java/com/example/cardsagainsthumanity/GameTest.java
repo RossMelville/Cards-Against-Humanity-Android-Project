@@ -112,5 +112,13 @@ public class GameTest {
         assertEquals(1, game.dealerIndex);
     }
 
+    @Test
+    public void canGetDealerIndex() {
+        Game game = new Game(2);
+        game.setDealerIndex(5);
+        int result = game.getDealerIndex();
+        assertEquals(5, result);
+    }
+
 }
 
